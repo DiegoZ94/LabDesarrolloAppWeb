@@ -1,0 +1,34 @@
+extends ../layout 
+
+block content
+    a(href='/') Home
+    br
+    a(href='/bicicletas') Listado
+    br
+    h1 Actualizar bicicleta 
+    form(action=`/bicicletas/${data.id}/update` method='POST')
+        table.table 
+            tr 
+                td
+                    label(for='color') Color:
+                td
+                    input#color(type='text' name='color' value=data.color)
+            tr 
+                td
+                    label(for='modelo') Modelo:
+                td
+                    input#modelo(type='text' name='modelo' value=data.modelo)
+            tr 
+                td
+                    label(for='lat') Lat:
+                td
+                    input#lat(type='text' name='lat' maxlength='9' value=data.lat)
+            tr 
+                td
+                    label(for='lon') Lon:
+                td
+                    input#lon(type='text' name='lon' maxlength='10' value=data.lon)
+            tr
+                td 
+                td
+                    input.btn(type='submit' value='Update')
